@@ -26,10 +26,10 @@ def count_adverbs(words_with_pos_tags):
 
 
 def print_results(adverb_instances, adverb_counter, words_with_pos_tags):
-    for word in sorted(adverb_instances, key=adverb_instances.get, reverse=True):
-        print(word, adverb_instances[word])
+    for adverb in sorted(adverb_instances, key=adverb_instances.get, reverse=True):
+        print(adverb, adverb_instances[adverb])
     adverb_percentage = adverb_counter / len(words_with_pos_tags) * 100
-    print("adverb percentage is %f" % adverb_percentage)
+    print("Total percentage of text that are adverbs is %.1f%%" % adverb_percentage)
 
 
 def analyze(file_path):
