@@ -6,3 +6,13 @@ adverb analysis
 
 # Russell
 data cleaning
+
+#Install dependencies
+```pip install -r requirements.txt```
+
+#Run
+```cd src```
+
+```python adverbs.py```
+
+
