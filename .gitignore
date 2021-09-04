@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Data Storage
-data/
+dataUnclean/
 
 
 # Distribution / packaging
