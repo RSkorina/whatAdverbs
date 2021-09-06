@@ -4,3 +4,13 @@ What adverbs do authors use?
 # ONLY
 # REALLY
 
+
+#Install dependencies
+```pip install -r requirements.txt```
+
+#Run
+```cd src```
+
+```python adverbs.py```
+
+

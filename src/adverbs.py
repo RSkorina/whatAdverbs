@@ -13,13 +13,13 @@ def tokenize_file(file_path):
     return nltk.pos_tag(words)
 
 
-def count_adverbs(words_with_pos_tags):
+def count_adverbs(words_with_pos_tags, only_ly):
     adverb_instances = defaultdict(int)
     adverb_counter = 0
-    for pos in words_with_pos_tags:
+    for word_with_pos_tag in words_with_pos_tags:
+        word = word_with_pos_tag[0]
         # RB is abbrevaition for adverb
-        if (pos[1] == 'RB'):
-            word = pos[0]
+        if (word_with_pos_tag[1] == 'RB' and (not only_ly or word[-2:] == 'ly')):
             adverb_instances[word] += 1
             adverb_counter += 1
     return adverb_instances, adverb_counter
@@ -29,14 +29,14 @@ def print_results(adverb_instances, adverb_counter, words_with_pos_tags):
     for adverb in sorted(adverb_instances, key=adverb_instances.get, reverse=True):
         print(adverb, adverb_instances[adverb])
     adverb_percentage = adverb_counter / len(words_with_pos_tags) * 100
-    print("Total percentage of text that are adverbs is %.1f%%" % adverb_percentage)
+    print("Total percentage of text that are adverbs is %.2f%%" % adverb_percentage)
 
 
-def analyze(file_path):
+def analyze(file_path, only_ly=False):
     words_with_pos_tags = tokenize_file(file_path)
-    results = count_adverbs(words_with_pos_tags)
+    results = count_adverbs(words_with_pos_tags, only_ly)
     print_results(*results, words_with_pos_tags)
 
 
 if __name__ == '__main__':
-    analyze('../data/test_clean.txt')
+    analyze('../data/acrossTheRiverAndIntoTheTrees.txt', True)
