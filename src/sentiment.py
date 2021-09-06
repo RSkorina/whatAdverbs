@@ -29,4 +29,4 @@ def analyze_sentiment(raw_text):
     return pd.DataFrame(sentiment_of_sentence)
 
 if __name__ == '__main__':
-    analyze_directory_sentiment("../data/short_sample_raw_text", "../data/sentiment")
+    analyze_directory_sentiment("../data/raw_text", "../data/sentiment")
