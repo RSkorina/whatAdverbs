@@ -39,4 +39,4 @@ def analyze(file_path, only_ly=False):
 
 
 if __name__ == '__main__':
-    analyze('../data/acrossTheRiverAndIntoTheTrees.txt', True)
+    analyze('../data/raw_text/acrossTheRiverAndIntoTheTrees.txt', True)
