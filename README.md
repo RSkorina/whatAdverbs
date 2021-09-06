@@ -1,8 +1,16 @@
 # whatAdverbs
 What adverbs do authors use?
+# NOT
+# ONLY
+# REALLY
 
-# Abe
-adverb analysis
 
-# Russell
-data cleaning
+#Install dependencies
+```pip install -r requirements.txt```
+
+#Run
+```cd src```
+
+```python adverbs.py```
+
+
