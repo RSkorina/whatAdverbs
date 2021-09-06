@@ -9,7 +9,7 @@ sia = SentimentIntensityAnalyzer()
 
 def analyze(input_directory, output_directory):
     listdir = os.listdir(input_directory)
-    for dir in ["test_sentiment.txt"]:
+    for dir in ["shortStories.txt"]:
         print(dir)
         output_file_name = os.path.splitext(dir)[0] + '.csv'
         input_full_path = '%s/%s' % (input_directory, dir)
@@ -18,7 +18,7 @@ def analyze(input_directory, output_directory):
 
 #TODO add rows in sentence
 def single_analyze(input_file_path, output_file_path):
-    file = open(input_file_path)
+    file = open(input_file_path, 'r', encoding='utf-8')
     raw_text = file.read()
     setences = nltk.sent_tokenize(raw_text)
     arr = []
