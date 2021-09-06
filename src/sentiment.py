@@ -11,7 +11,7 @@ sia = SentimentIntensityAnalyzer()
 
 def analyze(input_directory, output_directory):
     listdir = os.listdir(input_directory)
-    for file_name in ["test_sentiment.txt"]:
+    for file_name in listdir:
         input_file_full_path = '%s/%s' % (input_directory, file_name)
         output_file_name = os.path.splitext(file_name)[0] + '.csv'
         output_file_full_path = "%s/%s" %(output_directory, output_file_name)
@@ -37,4 +37,4 @@ def count_words(text):
     print(tokens)
 
 if __name__ == '__main__':
-    analyze("../data/raw_text", "../data/sentiment")
+    analyze("../data/short_sample_raw_text", "../data/sentiment")
